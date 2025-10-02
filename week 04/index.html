@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Cards Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 60px 20px;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+
+            position: fixed;
+            left: 0;
+            top: 0;
+
+            z-index: 2;
+        }
+
+        .cards {
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            width: 200px;
+
+            display: inline-block;
+            position: relative;
+        }
+
+        /* .card:nth-child(3n+1) {
+            background-color: #31c8fa;
+        } */
+        .card:first-child {
+            /* display: none; */
+            /* visibility: hidden; */
+        }
+
+        .card img {
+            border-radius: 25%;
+            /* TODO: Push the image to the center horizontally without changing its size */
+            width: 80%;
+            height: auto;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            background-color: wheat;
+        }
+
+        .card:first-child h3{
+            position: relative;
+            top: 0;
+            left: -10px;
+        }
+
+        .card p {
+            font-size: 14px;
+        }
+
+        .card span {
+            background-color: #b5e6f6;
+            /* display: inline-block;
+            height: 50px; */
+        }
+
+        .follow-btn {
+            background: #008cba;
+            box-shadow: 2px 2px 2px #31c8fa;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Our Team</h1>
+    </header>
+
+    <div class="cards">
+        <div class="card">
+            <img src="https://picsum.photos/200" alt="Profile 1">
+            <h3>Alice <span>(Designer)</span></h3>
+            <p>A creative mind who loves to play with colors and layouts.</p>
+            <button class="follow-btn">Follow</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200" alt="Profile 2">
+            <h3>Bob <span>(Developer)</span></h3>
+            <p>Passionate about coding and solving problems.</p>
+            <button class="follow-btn">Follow</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200" alt="Profile 3">
+            <h3>Clara <span>(Manager)</span></h3>
+            <p>Keeps the team together and ensures everything runs smoothly.</p>
+            <button class="follow-btn">Follow</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200" alt="Profile 1">
+            <h3>Alice <span>(Designer)</span></h3>
+            <p>A creative mind who loves to play with colors and layouts.</p>
+            <button class="follow-btn">Follow</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200" alt="Profile 2">
+            <h3>Bob <span>(Developer)</span></h3>
+            <p>Passionate about coding and solving problems.</p>
+            <button class="follow-btn">Follow</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200" alt="Profile 3">
+            <h3>Clara <span>(Manager)</span></h3>
+            <p>Keeps the team together and ensures everything runs smoothly.</p>
+            <button class="follow-btn">Follow</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
