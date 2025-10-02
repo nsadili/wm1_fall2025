@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Cards Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 60px 20px;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+
+        }
+
+        .cards {
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            width: 150px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+        }
+
+        .follow-btn {
+            background: #008cba;
+            box-shadow: 2px 2px 2px #31c8fa;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Our Team</h1>
+    </header>
+
+    <div class="cards">
+        <div class="card">
+            <img src="https://picsum.photos/200" alt="Profile 1">
+            <h3>Alice <span>(Designer)</span></h3>
+            <p>A creative mind who loves to play with colors and layouts.</p>
+            <button class="follow-btn">Follow</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200" alt="Profile 2">
+            <h3>Bob <span>(Developer)</span></h3>
+            <p>Passionate about coding and solving problems.</p>
+            <button class="follow-btn">Follow</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200" alt="Profile 3">
+            <h3>Clara <span>(Manager)</span></h3>
+            <p>Keeps the team together and ensures everything runs smoothly.</p>
+            <button class="follow-btn">Follow</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
