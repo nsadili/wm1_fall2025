@@ -6,7 +6,7 @@
 
 2. Change the value of display property. Check the output.
 
-3. Add display: none vs visibility: hidden on one .card.
+3. Add <b>display: none</b> vs <b>visibility: hidden</b> on one <b>.card</b>.
 
 ### Position property
 
