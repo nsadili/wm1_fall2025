@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+
+<body>
+
+    <input type="number" name="counter" id="counter" value="0" />
+    <br>
+    <button id="btnInc" onclick="handleClick(this)">Increment</button>
+    <button id="btnDec" onclick="handleClick(this)">Decrement</button>
+    <button id="btnRes" onclick="handleClick(this)">Reset</button>
+
+
+    <ul id="favMovieList"> </ul>
+
+    <script>
+        function handleClick(target) {
+            let counterValue = document.getElementById('counter').value;
+            switch (target.id) {
+                case 'btnInc':
+                    document.getElementById('counter').value = ++counterValue;
+                    break;
+                case 'btnDec':
+                    document.getElementById('counter').value = --counterValue;
+                    break;
+                case 'btnRes':
+                    document.getElementById('counter').value = 0;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
