@@ -11,29 +11,80 @@
 
     <input type="number" name="counter" id="counter" value="0" />
     <br>
-    <button id="btnInc" onclick="handleClick(this)">Increment</button>
+    <!-- <button id="btnInc" onclick="handleClick(this)">Increment</button>
     <button id="btnDec" onclick="handleClick(this)">Decrement</button>
-    <button id="btnRes" onclick="handleClick(this)">Reset</button>
+    <button id="btnRes" onclick="handleClick(this)">Reset</button> -->
 
+    <div id="group">
+        <button id="btnInc">Increment</button>
+        <button id="btnDec">Decrement</button>
+        <button id="btnRes">Reset</button>
+    </div>
 
+    <br>
+    <input type="text" id="yourFavMovie" placeholder="Your Favorite Movie">
     <ul id="favMovieList"> </ul>
 
     <script>
-        function handleClick(target) {
+        const myFavMovieList = ['Theory of Everything', 'The Shawshank Redemption',
+            'Bird Box', 'Toy Story', 'Interstellar', 'Django Unchained'
+        ]
+
+        const myFavMovieListEl = document.querySelector('#favMovieList')
+
+        myFavMovieList.forEach(favMovie => {
+            let li = document.createElement('li')
+            // li.innerHTML = 'Theory of Everything'
+            li.append(document.createTextNode(favMovie))
+            myFavMovieListEl.append(li)
+        })
+
+
+        document.getElementById('yourFavMovie').addEventListener('keydown', (e) => {
+            if (e.keyCode == 13) {
+                let li = document.createElement('li')
+                // li.innerHTML = 'Theory of Everything'
+                li.append(document.createTextNode(e.target.value))
+                myFavMovieListEl.append(li)
+
+                e.target.value = ""
+            }
+        })
+
+
+        document.getElementById('counter').readOnly = true
+
+        function handleClick(event) {
             const inputField = document.getElementById('counter')
             let value = inputField.value;
-            console.log(target.id)
-            switch (target.id) {
+            switch (event.target.id) {
                 case 'btnInc':
-                    inputField.value = ++value
+                    if (value < 10)
+                        inputField.value = ++value
                     break
                 case 'btnDec':
-                    inputField.value = --value
+                    if (value > 0)
+                        inputField.value = --value
                     break
                 case 'btnRes':
-                    inputField.value = 1111
+                    inputField.value = 0
             }
         }
+
+        document.querySelectorAll('button').forEach(duyme => {
+            duyme.addEventListener('click', handleClick)
+        })
+
+        setInterval(() => {
+            // console.log("Salam")
+        }, 1000);
+
+        setTimeout(() => {
+            document.querySelectorAll('button').forEach(duyme => {
+                duyme.removeEventListener('click', handleClick)
+            })
+        }, 10000);
+
     </script>
 
 
