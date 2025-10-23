@@ -11,27 +11,85 @@
 
     <input type="number" name="counter" id="counter" value="0" />
     <br>
-    <button id="btnInc" onclick="handleClick(this)">Increment</button>
+    <!-- <button id="btnInc" onclick="handleClick(this)">Increment</button>
     <button id="btnDec" onclick="handleClick(this)">Decrement</button>
-    <button id="btnRes" onclick="handleClick(this)">Reset</button>
+    <button id="btnRes" onclick="handleClick(this)">Reset</button> -->
 
+    <button id="btnInc">Increment</button>
+    <button id="btnDec">Decrement</button>
+    <button id="btnRes">Reset</button>
 
-    <ul id="favMovieList"> </ul>
+    <br>
+    <input type="text" name="yourFavMov" id="yourFavMov" placeholder="Your favorite movie">
+    <ul id="favMovieList">
+    </ul>
 
     <script>
-        function handleClick(target) {
+        const favMovieList = ['Pride and Prejudice', 'The Godfather', 'Spiderman',
+            'John Wick', '12 Angry Men', 'Scent of a woman'
+        ]
+
+        favMovieList.forEach(addMovieNameToList)
+
+        document.getElementById('yourFavMov').addEventListener('keydown', (e) => {
+            console.log(e)
+            if (e.keyCode == 13) {
+                addMovieNameToList(e.target.value)
+                e.target.value = ""
+            }
+        })
+
+        function addMovieNameToList(movieName) {
+            const favMovieListEl = document.getElementById('favMovieList')
+
+            let li = document.createElement('li')
+            li.appendChild(document.createTextNode(movieName))
+
+            li.addEventListener('click', (e) => {
+                //TODO: remove the clicked li from the ul  
+            })
+            favMovieListEl.appendChild(li)
+
+        }
+
+
+        document.getElementById('counter').readOnly = true
+        const MAX_LIM = 10
+        const MIN_LIM = 0
+
+        function handleClick(event) {
             let counterValue = document.getElementById('counter').value;
-            switch (target.id) {
+            switch (event.target.id) {
                 case 'btnInc':
-                    document.getElementById('counter').value = ++counterValue;
+                    if (counterValue < 10)
+                        document.getElementById('counter').value = ++counterValue;
                     break;
                 case 'btnDec':
-                    document.getElementById('counter').value = --counterValue;
+                    if (counterValue > 0)
+                        document.getElementById('counter').value = --counterValue;
                     break;
                 case 'btnRes':
                     document.getElementById('counter').value = 0;
             }
         }
+
+        // document.getElementById("btnInc").addEventListener(
+        //     'click', () => { alert('clicked') })
+        // document.getElementById("btnInc").addEventListener(
+        //     'mouseover', () => { console.log('Mouse over') }
+        // )
+
+        document.querySelectorAll('button').forEach(btn => btn.addEventListener(
+            'click', handleClick, true
+        ))
+
+        // setInterval(() => {
+        //     // console.log("hello")
+        // }, 1000)
+        setTimeout(() => {
+            document.querySelectorAll('button').forEach(
+                btn => btn.removeEventListener('click', handleClick))
+        }, 10000)
     </script>
 
 </body>
